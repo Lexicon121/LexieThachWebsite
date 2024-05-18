@@ -14,13 +14,9 @@ var App = {
         ls: function() {
             this.echo('[[b;#66ffff;]autoexec.cfg]');
             this.echo('[[b;#66ffff;]CLASSIFIED.tar.gz]');
-            this.echo('[[b;#66ffff;]hgregal_Private.pgp]');
-            this.echo('[[b;#66ffff;]huntergregal.pem]');
-            this.echo('[[b;#66ffff;]HashCrackingReport.pdf]');
-            this.echo('[[b;#66ffff;]HunterGregalResume.pdf]');
-            this.echo('[[b;#66ffff;]passwords.txt]');
-            this.echo('[[b;#66ffff;]Python_Encryptor.py]');
-            this.echo('[[b;#66ffff;]theSecretToLife.txt]');
+            this.echo('[[b;#66ffff;]IAC-2023,80363.matter.pdf]');
+            this.echo('[[b;#66ffff;]AlexThachResumev1.docx]');
+            this.echo('[[b;#66ffff;]AlexThachFederalResumev1.docx]');
         if(ga != undefined) ga('send', 'event', 'ls');
     },
     whoami: function() {
@@ -31,7 +27,7 @@ var App = {
        blog: function() {
         if(ga != undefined) ga('send', 'event', 'blog');
         this.echo("Loading the blog... Wait a sec ...")
-        setTimeout(function(){ document.location.href = 'http://blog.huntergregal.com'; }, 1000);
+           setTimeout(function () { document.location.href = 'https://lexicon121.github.io/LexieThachWebsite/'; }, 1000);
     },
         publicPGPkey: function() {
         showPGP(this);
@@ -65,7 +61,7 @@ var App = {
     },
     shutdown: function() {
         this.error('SYSTEM HALT!');
-        setTimeout(function(){ document.location.href = 'http://huntergregal.com'; }, 2500);
+        setTimeout(function () { document.location.href = 'https://hmpg.net/'; }, 2500);
         if(ga != undefined) ga('send', 'event', 'shutdown');
     },
     env: function() {
@@ -74,7 +70,7 @@ var App = {
     },
     cv: function() {
         this.echo("Loading my resume");
-        setTimeout(function(){ document.location.href = 'http://huntergregal.com/HunterGregalResume.pdf'; }, 1000);
+        setTimeout(function () { document.location.href = 'https://lexicon121.github.io/LexieThachWebsite/AlexThachResumev1.docx'; }, 1000);
         if(ga != undefined) ga('send', 'event', 'env');
     },
     oldsite: function() {
@@ -85,11 +81,6 @@ var App = {
     github: function() {
         this.echo("Loading my github...");
         setTimeout(function () { document.location.href = 'https://github.com/Lexicon121'; }, 1000);
-        if(ga != undefined) ga('send', 'event', 'env');
-    },
-    publicPGPkey: function() {
-        this.echo("Loading PGP key...");
-        setTimeout(function(){ document.location.href = 'http://huntergregal.com/publicPGPkey.txt'; }, 1000);
         if(ga != undefined) ga('send', 'event', 'env');
     }
 }
@@ -165,7 +156,6 @@ function showHelp(consoleObj)
         consoleObj.echo("\t[[b;#66ffff;]id]                #Id...");
         consoleObj.echo("\t[[b;#66ffff;]ls]                #Ls...");
         consoleObj.echo("\t[[b;#66ffff;]oldsite]           #Visit my old website");
-        consoleObj.echo("\t[[b;#66ffff;]publicPGPkey]      #Display my public PGP key");
         consoleObj.echo("\t[[b;#66ffff;]shutdown]          #Shutdown system");
         consoleObj.echo("\t[[b;#66ffff;]whoami]            #Whomai...");
         consoleObj.echo("\t[[b;#66ffff;]www]               #Display information about this site");
