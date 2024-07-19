@@ -159,6 +159,9 @@ $(document).ready(function() {
             },
             tabcompletion: true
         });
+
+        // Automatically focus on the terminal input field
+        terminal.focus();
     }
 
     startTerminal();
