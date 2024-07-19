@@ -1,74 +1,112 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-        <meta charset="utf-8" />
-        <title>lexiethach:~#</title>
-        <meta name="description" content="Lexie Thach's personal website"/>
-        <link rel="shortcut icon" href="favicon.ico"/>
-        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
-        <link href="css/jquery.terminal.css" rel="stylesheet"/>
-        <link href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="js/jquery.mousewheel-min.js"></script>
-        <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
-        <script src="js/base64.js"></script>
-        <script src="js/main.js"></script>
-	<script data-ad-client="ca-pub-1374642536495377" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-80531617-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-80531617-1');
-</script>
-<style>
-  /* Add this CSS to your existing stylesheet or create a new one */
-  /* Default styles for desktop */
-  body {
+<head>
+  <meta charset="utf-8" />
+  <title>lexiethach:~#</title>
+  <meta name="description" content="Lexie Thach's personal website" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+  <link href="css/jquery.terminal.css" rel="stylesheet" />
+  <link href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery.mousewheel-min.js"></script>
+  <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+  <script src="js/base64.js"></script>
+  <script src="js/main.js"></script>
+  <script data-ad-client="ca-pub-1374642536495377" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80531617-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-80531617-1');
+  </script>
+  <style>
+    /* Add this CSS to your existing stylesheet or create a new one */
+    /* Default styles for desktop */
+    body {
       font-family: 'Source Code Pro', monospace;
       background-color: #000;
       color: #0f0;
       font-size: 16px;
-  }
+    }
 
-  /* Styles for tablets */
-  @media (max-width: 768px) {
+    /* Styles for tablets */
+    @media (max-width: 768px) {
       body {
-          font-size: 14px;
+        font-size: 14px;
       }
-      
-      .terminal {
-          width: 90%;
-          height: 400px;
-          margin: auto;
-      }
-  }
 
-  /* Styles for mobile phones */
-  @media (max-width: 480px) {
-      body {
-          font-size: 12px;
-      }
-      
       .terminal {
-          width: 100%;
-          height: 300px;
-          margin: auto;
+        width: 90%;
+        height: 400px;
+        margin: auto;
       }
-  }
-</style>
-    </head>
-    <body>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-80531617-1', 'auto');
-  ga('send', 'pageview');
-</script>
-	</body>
+    }
+
+    /* Styles for mobile phones */
+    @media (max-width: 480px) {
+      body {
+        font-size: 12px;
+      }
+
+      .terminal {
+        width: 100%;
+        height: 300px;
+        margin: auto;
+      }
+    }
+
+    /* ASCII Art Centering */
+    .ascii-art {
+      text-align: center;
+      white-space: pre-wrap;
+      /* Adjusts white space for responsive */
+      font-size: 1.5em;
+      /* Adjust as needed */
+      line-height: 1.2em;
+      /* Adjust as needed */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      /* Full viewport height */
+    }
+
+    /* Responsive scaling for ASCII art */
+    @media (max-width: 768px) {
+      .ascii-art {
+        font-size: 1.2em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ascii-art {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="terminal-container">
+    <div class="terminal"></div>
+</div>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-80531617-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+
 </html>

@@ -92,54 +92,68 @@ window.mobileAndTabletcheck = function() {
 }
 
 jQuery(document).ready(function($) {
-    
-     
-     
-           $('body').terminal(App, {
-         greetings: "[[b;#66ffff;]"+
-		"Starting udev:...................................( OK )\n"+
-		"Mount devpts:....................................( OK )\n"+
-		"Configure kernel options.........................( OK )\n"+
-		"Setting clock: "+Date.now()+".....................( OK )\n"+
-		"SYSTEM BOOT COMPLETE.............................( OK )\n\n\n"+
-		"~MOTD~\n"+
-       "     ##### /                                                 /###           /  /                             /       \n" +
-                   "  ######  /                               #                 /  ############/ #/                            #/        \n" +
-                   " /#   /  /                               ###               /     #########   ##                            ##        \n" +
-                   "/    /  /                                 #                #     /  #        ##                            ##        \n" +
-                   "    /  /                                                    ##  /  ##        ##                            ##        \n" +
-                   "   ## ##              /##   /##    ###  ###       /##          /  ###        ##  /##      /###     /###    ##  /##   \n" +
-                   "   ## ##             / ### / ###  #### / ###     / ###        ##   ##        ## / ###    / ###  / / ###  / ## / ###  \n" +
-                   "   ## ##            /   ###   ### /###/   ##    /   ###       ##   ##        ##/   ###  /   ###/ /   ###/  ##/   ### \n" +
-                   "   ## ##           ##    ###   ##/  ##    ##   ##    ###      ##   ##        ##     ## ##    ## ##         ##     ## \n" +
-                   "   ## ##           ########     /##       ##   ########       ##   ##        ##     ## ##    ## ##         ##     ## \n" +
-                   "   #  ##           #######     / ###      ##   #######         ##  ##        ##     ## ##    ## ##         ##     ## \n" +
-                   "      /            ##         /   ###     ##   ##               ## #      /  ##     ## ##    ## ##         ##     ## \n" +
-                   "  /##/           / ####    / /     ###    ##   ####    /         ###     /   ##     ## ##    /# ###     /  ##     ## \n" +
-                   " /  ############/   ######/ /       ### / ### / ######/           ######/    ##     ##  ####/ ## ######/   ##     ## \n" +
-                   "/     #########      ##### /         ##/   ##/   #####              ###       ##    ##   ###   ## #####     ##    ## \n" +
-                   "#                                                                                   /                             /  \n" +
-                   " ##                                                                                /                             /   \n" +
-                   "                                                                                  /                             /    \n" +
-                   "                                                                                 /                             /     \n" +
-		"Welcome to Lexie Thach's personal website!\n\n"+
-		"Quick Commands\n"+
-		"\techo          env          help\n"+
-		"\tid           ls           whoami\n\n"+
-		"root]@lexiethach.com:~# env\n[[b;#66ffff;]NAME=LexieThach\nTITLE=SecurityEngineer;RobotHacker\nMEDIUMBLOG=https://medium.com/@alex.thach3\nGITHUB=https://github.com/Lexicon121\nBLUESKY=@lexiecon.bsky.social\n_=/usr/bin/env]",
-                prompt: function(p){
-            var path = '~'
-            p(e + ":" + path + "# ");
-        },
-        onBlur: function() {
-            // prevent loosing focus
-            return false;
-        },
-        tabcompletion: true
+    const isMobile = window.matchMedia("only screen and (max-width: 480px)").matches;
+    const isTablet = window.matchMedia("only screen and (max-width: 768px)").matches;
+
+    let termWidth = '600px';
+    let termHeight = '400px';
+
+    if (isMobile) {
+        termWidth = '100%';
+        termHeight = '300px';
+    } else if (isTablet) {
+        termWidth = '90%';
+        termHeight = '400px';
+    }
+
+    function startTerminal() {
+        $('.terminal').terminal(App, {
+            width: termWidth,
+            height: termHeight,
+            greetings: "[[b;#66ffff;]" +
+                "Starting udev:...................................( OK )\n" +
+                "Mount devpts:....................................( OK )\n" +
+                "Configure kernel options.........................( OK )\n" +
+                "Setting clock: " + Date.now() + ".....................( OK )\n" +
+                "SYSTEM BOOT COMPLETE.............................( OK )\n\n\n" +
+                "~MOTD~\n" +
+                "     ##### /                                                 /###           /  /                             /       \n" +
+                "  ######  /                               #                 /  ############/ #/                            #/        \n" +
+                " /#   /  /                               ###               /     #########   ##                            ##        \n" +
+                "/    /  /                                 #                #     /  #        ##                            ##        \n" +
+                "    /  /                                                    ##  /  ##        ##                            ##        \n" +
+                "   ## ##              /##   /##    ###  ###       /##          /  ###        ##  /##      /###     /###    ##  /##   \n" +
+                "   ## ##             / ### / ###  #### / ###     / ###        ##   ##        ## / ###    / ###  / / ###  / ## / ###  \n" +
+                "   ## ##            /   ###   ### /###/   ##    /   ###       ##   ##        ##/   ###  /   ###/ /   ###/  ##/   ### \n" +
+                "   ## ##           ##    ###   ##/  ##    ##   ##    ###      ##   ##        ##     ## ##    ## ##         ##     ## \n" +
+                "   ## ##           ########     /##       ##   ########       ##   ##        ##     ## ##    ## ##         ##     ## \n" +
+                "   #  ##           #######     / ###      ##   #######         ##  ##        ##     ## ##    ## ##         ##     ## \n" +
+                "      /            ##         /   ###     ##   ##               ## #      /  ##     ## ##    ## ##         ##     ## \n" +
+                "  /##/           / ####    / /     ###    ##   ####    /         ###     /   ##     ## ##    /# ###     /  ##     ## \n" +
+                " /  ############/   ######/ /       ### / ### / ######/           ######/    ##     ##  ####/ ## ######/   ##     ## \n" +
+                "/     #########      ##### /         ##/   ##/   #####              ###       ##    ##   ###   ## #####     ##    ## \n" +
+                "#                                                                                   /                             /  \n" +
+                " ##                                                                                /                             /   \n" +
+                "                                                                                  /                             /    \n" +
+                "                                                                                 /                             /     \n" +
+                "Welcome to Lexie Thach's personal website!\n\n" +
+                "Quick Commands\n" +
+                "\techo          env          help\n" +
+                "\tid           ls           whoami\n\n" +
+                "root]@lexiethach.com:~# env\n[[b;#66ffff;]NAME=LexieThach\nTITLE=SecurityEngineer;RobotHacker\nMEDIUMBLOG=https://medium.com/@alex.thach3\nGITHUB=https://github.com/Lexicon121\nBLUESKY=@lexiecon.bsky.social\n_=/usr/bin/env]",
+            prompt: function(p) {
+                var path = '~';
+                p(e + ":" + path + "# ");
+            },
+            onBlur: function() {
+                // prevent losing focus
+                return false;
+            },
+            tabcompletion: true
         });
+    }
 
-
- 
+    startTerminal();
 });
 
 function showHelp(consoleObj)
