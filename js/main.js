@@ -115,7 +115,7 @@ $(document).ready(function() {
     }
 
     function startTerminal() {
-        $('.terminal').terminal(App, {
+        const terminal = $('.terminal').terminal(App, {
             width: termWidth,
             height: termHeight,
             greetings: "[[b;#66ffff;]" +
@@ -161,7 +161,9 @@ $(document).ready(function() {
         });
 
         // Automatically focus on the terminal input field
-        terminal.focus();
+        setTimeout(() => {
+            $('.terminal').find('.cursor').focus();
+        }, 100); // slight delay to ensure the focus is applied
     }
 
     startTerminal();
